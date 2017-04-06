@@ -1,0 +1,47 @@
+{
+  "name": "typescript-monopoly",
+  "version": "1.0.0",
+  "description": "Typescript template - here illustrating OO Design for Game of Monopoly",
+  "main": "./build/lib/main.js",
+  "scripts": {
+    "lint": "tslint ./src/**/*.ts",
+    "clean": "rimraf build/* && rimraf docs/*",
+    "compile": "tsc --alwaysStrict",
+    "prepare": "npm run clean && npm run lint && npm run compile",
+    "play": "npm run prepare && node ./build/lib/main.js",
+    "test": "npm run prepare && mocha ./build/test/tests.js",
+    "jsdoc": "npm run prepare && jsdoc -r ./build/lib --destination docs",
+    "watch": "npm run compile -- --watch"
+  },
+  "author": "arcseldon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tawawa/typescript-monopoly.git"
+  },
+  "keywords": [
+    "monopoly",
+    "object oriented design",
+    "typescript",
+    "responsibility assignment"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "ramda": "^0.23.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/lodash": "^4.14.59",
+    "@types/mocha": "^2.2.40",
+    "@types/ramda": "0.0.5",
+    "chai": "^3.5.0",
+    "jsdoc": "^3.4.3",
+    "mocha": "^3.2.0",
+    "rimraf": "^2.6.1",
+    "tslint": "^4.5.0",
+    "tslint-eslint-rules": "^3.5.1",
+    "tslint-microsoft-contrib": "^4.0.1",
+    "tsutils": "^1.4.0",
+    "typescript": "^2.2.2"
+  }
+}
